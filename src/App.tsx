@@ -47,7 +47,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="h-[170vh] bg-black relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat mix-blend-screen"
         style={{
@@ -124,7 +124,7 @@ function App() {
                   top: pos.y,
                   left: pos.x,
                   background:
-                    "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(94, 234, 212, 0.9) 50%, rgba(94, 234, 212, 0) 70%)",
+                    "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(244, 247, 247, 0.9) 50%, rgba(94, 234, 212, 0) 70%)",
                   filter: "blur(10px)",
                 }}
               ></span>
@@ -136,7 +136,7 @@ function App() {
           </div>
         </nav>
 
-        <div className="flex flex-col items-center justify-center text-center px-6 py-20 lg:py-32 -mt-10">
+        <div className="flex flex-col items-center justify-center text-center px-6 py-20 lg:py-32 mt-[-55px]">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-[60px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-300 mb-6 leading-tight">
               Your Money. Your Rules.
@@ -150,7 +150,7 @@ function App() {
               <br />
               Across Currencies — All In One Intelligent Dashboard.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 ">
               <div
                 className="relative rounded-full"
                 onMouseEnter={() => setIsSecondHovering(true)}
@@ -167,7 +167,7 @@ function App() {
                         }px 20px rgba(94, 234, 212, 0.6), 
                          ${secondGlowOffset.x / 4}px ${
                           secondGlowOffset.y / 4
-                        }px 30px rgba(94, 234, 212, 0.4)`
+                        }px 30px rgba(145, 229, 216, 0.4)`
                       : "0 5px 15px rgba(0, 0, 0, 0.2)",
                   }}
                 >
@@ -191,7 +191,7 @@ function App() {
                       top: secondButtonPos.y,
                       left: secondButtonPos.x,
                       background:
-                        "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(94, 234, 212, 0.9) 50%, rgba(94, 234, 212, 0) 70%)",
+                        "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(244, 247, 247, 0.9) 50%, rgba(94, 234, 212, 0) 70%)",
                       filter: "blur(10px)",
                     }}
                   ></span>
@@ -210,10 +210,10 @@ function App() {
         </div>
 
         {/* Video Container */}
-        <div className="w-full h-[600px] relative top-[-170px] mix-blend-screen">
-          <div className="relative w-full h-[600px] overflow-hidden rounded-lg mx-auto max-w-7xl px-6">
+        <div className="w-full h-[600px] relative top-[-250px]  z-[-1]">
+          <div className="relative w-full h-[600px] overflow-hidden rounded-lg ">
             <video
-              className="w-full h-[600px] object-cover rounded-lg shadow-2xl mix-blend-screen opacity-80"
+              className="w-full h-[600px] object-cover rounded-lg "
               autoPlay
               muted
               loop
