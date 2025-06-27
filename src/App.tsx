@@ -48,7 +48,7 @@ function App() {
       {/* Background Video Layer */}
       <div className="absolute [top:40%] inset-0 z-0 pointer-events-none">
         <video
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover "
           autoPlay
           muted
           loop
