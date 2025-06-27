@@ -44,9 +44,9 @@ function App() {
   };
 
   return (
-    <div className="h-[150vh] bg-black relative overflow-hidden">
+    <div className="h-screen bg-black relative overflow-hidden">
       {/* Background Video Layer */}
-      <div className="absolute top-48 inset-0 z-0 pointer-events-none">
+      <div className="absolute top-1/2 inset-0 z-0 pointer-events-none">
         <video
           className="w-full h-full object-cover opacity-40"
           autoPlay
