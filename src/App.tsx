@@ -9,12 +9,13 @@ function App() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
+  // Tracking Mouse Position
   const handleMouseMove = (e: MouseEvent<HTMLButtonElement>) => {
     if (!buttonRef.current) return;
     const rect = buttonRef.current.getBoundingClientRect();
     setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
-
+  // Calculating Glow Direction (Shadow Offset)
   const buttonCenter = {
     x: buttonRef.current ? buttonRef.current.offsetWidth / 2 : 0,
     y: buttonRef.current ? buttonRef.current.offsetHeight / 2 : 0,
@@ -46,7 +47,7 @@ function App() {
   return (
     <div className="h-screen bg-black relative overflow-hidden">
       {/* Background Video Layer */}
-      <div className="absolute [top:60%] inset-0 z-0 pointer-events-none">
+      <div className="absolute [top:40%] inset-0 z-0 pointer-events-none">
         <video
           className="w-full h-full object-cover opacity-40"
           autoPlay
@@ -110,6 +111,7 @@ function App() {
                   : "0 5px 15px rgba(0, 0, 0, 0.2)",
               }}
             >
+              {/* Big Soft Glow (Follows Cursor) */}
               <span
                 className={`absolute w-[550px] h-32 -translate-x-1/2 -translate-y-1/2 rounded-l pointer-events-none ${
                   isHovering ? "opacity-100" : "opacity-0"
@@ -122,6 +124,7 @@ function App() {
                   filter: "blur(20px)",
                 }}
               ></span>
+              {/* Small Bright Spot (Inner Glow) */}
               <span
                 className={`absolute w-20 h-20 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none transition-opacity duration-200 ${
                   isHovering ? "opacity-100" : "opacity-0"
