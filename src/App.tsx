@@ -1,6 +1,5 @@
 import { useRef, useState, MouseEvent } from "react";
 import { ArrowRight, Play } from "lucide-react";
-import myBackground from "./Union.png";
 import lightImage from "./light.png";
 import demoVideo from "./assets/video.mp4";
 
@@ -60,10 +59,7 @@ function App() {
         </video>
       </div>
 
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat mix-blend-screen"
-        style={{ backgroundImage: `url(${myBackground})` }}
-      ></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat mix-blend-screen"></div>
 
       <div className="absolute top-0 left-0 z-0">
         <img src={lightImage} alt="Decorative light" className="opacity-100" />
