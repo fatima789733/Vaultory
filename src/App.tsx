@@ -3,8 +3,8 @@ import { ArrowRight, Play } from "lucide-react";
 import myBackground from "./Union.png";
 import lightImage from "./light.png";
 import demoVideo from "./assets/video.mp4";
+
 function App() {
-  // First button states and handlers
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -15,7 +15,6 @@ function App() {
     setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  // Calculate glow position relative to button center for shadow direction
   const buttonCenter = {
     x: buttonRef.current ? buttonRef.current.offsetWidth / 2 : 0,
     y: buttonRef.current ? buttonRef.current.offsetHeight / 2 : 0,
@@ -25,7 +24,6 @@ function App() {
     y: pos.y - buttonCenter.y,
   };
 
-  // Second button states and handlers
   const secondButtonRef = useRef<HTMLButtonElement>(null);
   const [secondButtonPos, setSecondButtonPos] = useState({ x: 0, y: 0 });
   const [isSecondHovering, setIsSecondHovering] = useState(false);
@@ -36,7 +34,6 @@ function App() {
     setSecondButtonPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  // Calculate second button glow position
   const secondButtonCenter = {
     x: secondButtonRef.current ? secondButtonRef.current.offsetWidth / 2 : 0,
     y: secondButtonRef.current ? secondButtonRef.current.offsetHeight / 2 : 0,
@@ -48,11 +45,23 @@ function App() {
 
   return (
     <div className="h-[170vh] bg-black relative overflow-hidden">
+      {/* Background Video Layer */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <video
+          className="w-full h-full object-cover opacity-40"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={demoVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat mix-blend-screen"
-        style={{
-          backgroundImage: `url(${myBackground})`,
-        }}
+        style={{ backgroundImage: `url(${myBackground})` }}
       ></div>
 
       <div className="absolute top-0 left-0 z-0">
@@ -61,13 +70,12 @@ function App() {
 
       <div className="relative z-10">
         <nav className="relative flex items-center justify-center mt-2 px-5 py-6 lg:px-12">
-          {/* Centered Nav Items */}
           <div
             className="hidden lg:flex items-center space-x-8 backdrop-blur-sm rounded-full px-6 py-2 border-2 shadow-lg"
             style={{
               background:
                 "linear-gradient(to right, rgba(22, 72, 68, 0.4), rgba(27, 36, 35, 0.4), rgba(27, 36, 35, 0.4), rgba(0, 0, 0, 0.4))",
-              borderColor: "rgba(45, 212, 191, 0.2)", // teal-400 with ~30% opacity
+              borderColor: "rgba(45, 212, 191, 0.2)",
             }}
           >
             {["Home", "Why us?", "Cases", "Features", "Pricing", "FAQ"].map(
@@ -83,7 +91,6 @@ function App() {
             )}
           </div>
 
-          {/* CTA Button - absolute to top-right */}
           <div
             className="absolute right-6 top-1/2 -translate-y-1/2 rounded-full"
             onMouseEnter={() => setIsHovering(true)}
@@ -97,8 +104,7 @@ function App() {
                 boxShadow: isHovering
                   ? `${glowOffset.x / 8}px ${
                       glowOffset.y / 8
-                    }px 20px rgba(94, 234, 212, 0.6), 
-             ${glowOffset.x / 4}px ${
+                    }px 20px rgba(94, 234, 212, 0.6), ${glowOffset.x / 4}px ${
                       glowOffset.y / 4
                     }px 30px rgba(94, 234, 212, 0.4)`
                   : "0 5px 15px rgba(0, 0, 0, 0.2)",
@@ -164,15 +170,16 @@ function App() {
                     boxShadow: isSecondHovering
                       ? `${secondGlowOffset.x / 8}px ${
                           secondGlowOffset.y / 8
-                        }px 20px rgba(94, 234, 212, 0.6), 
-                         ${secondGlowOffset.x / 4}px ${
+                        }px 20px rgba(94, 234, 212, 0.6), ${
+                          secondGlowOffset.x / 4
+                        }px ${
                           secondGlowOffset.y / 4
                         }px 30px rgba(145, 229, 216, 0.4)`
                       : "0 5px 15px rgba(0, 0, 0, 0.2)",
                   }}
                 >
                   <span
-                    className={`absolute w-[550px] h-32 -translate-x-1/2 -translate-y-1/2 rounded-l pointer-events-none  ${
+                    className={`absolute w-[550px] h-32 -translate-x-1/2 -translate-y-1/2 rounded-l pointer-events-none ${
                       isSecondHovering ? "opacity-100" : "opacity-0"
                     }`}
                     style={{
@@ -206,22 +213,6 @@ function App() {
                 <span>See how it works</span>
               </button>
             </div>
-          </div>
-        </div>
-
-        {/* Video Container */}
-        <div className="w-full h-[600px] relative top-[-250px]  z-[-1]">
-          <div className="relative w-full h-[600px] overflow-hidden rounded-lg ">
-            <video
-              className="w-full h-[600px] object-cover rounded-lg "
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src={demoVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
           </div>
         </div>
       </div>
