@@ -2,16 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom grid pattern */
-.bg-grid-pattern {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
+@font-face {
+  font-family: "Haffer Trial";
+  src: url("./fonts/Haffer-TRIAL-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --main-font: "Haffer-TRIAL", sans-serif;
 }
 
+body {
+  font-family: var(--main-font);
+}
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
