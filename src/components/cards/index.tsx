@@ -4,7 +4,7 @@ import clock from "../../assets/card-2.png";
 import zap from "../../assets/card-3.png";
 function BusinessFinanceHero() {
   return (
-    <div className="h-screen bg-black text-white relative overflow-hidden">
+    <div className=" bg-black text-white relative overflow-hidden">
       <div className="relative z-10 container mx-auto px-6 py-20">
         {/* Main heading */}
         <div className="text-center mb-20">
@@ -24,14 +24,7 @@ function BusinessFinanceHero() {
         {/* Problem cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Card 1: Too Many Tools */}
-          <div
-            className="backdrop-blur-sm border border-gray-700 rounded-[10px] p-8  transition-all duration-300 hover:scale-105 w-[380px] h-[350px]"
-            style={{
-              backgroundImage:
-                "lightgray 0% 0% / 100px 100px repeat, linear-gradient(135deg, rgba(164, 255, 255, 0.00) 0%, rgba(164, 255, 255, 0.08) 100%) ",
-              mixBlendMode: "screen",
-            }}
-          >
+          <div className="backdrop-blur-sm bg-gradient-to-br from-black to-teal-700/40 border border-gray-700 rounded-[10px] p-8  transition-all duration-300 hover:scale-105 w-[380px] h-[350px] ">
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 rounded-xl flex items-center justify-center">
                 <img src={pause} className="w-[100px] h-[100px]" alt="pause" />
@@ -55,14 +48,7 @@ function BusinessFinanceHero() {
           </div>
 
           {/* Card 2: Too Much Time Wasted */}
-          <div
-            className="backdrop-blur-sm border border-gray-700 rounded-[10px] p-8  transition-all duration-300 hover:scale-105 w-[380px] h-[350px]"
-            style={{
-              backgroundImage:
-                "lightgray 0% 0% / 100px 100px repeat, linear-gradient(135deg, rgba(164, 255, 255, 0.00) 0%, rgba(164, 255, 255, 0.08) 100%) ",
-              mixBlendMode: "screen",
-            }}
-          >
+          <div className="backdrop-blur-sm bg-gradient-to-br from-black to-teal-700/40 border border-gray-700 rounded-[10px] p-8  transition-all duration-300 hover:scale-105 w-[380px] h-[350px]">
             <div className="flex flex-col items-center text-center">
               <div className=" mb-6 rounded-xl flex items-center justify-center">
                 <img src={clock} className="w-[100px] h-[100px]" alt="pause" />
@@ -86,14 +72,7 @@ function BusinessFinanceHero() {
           </div>
 
           {/* Card 3: Too Little Flexibility */}
-          <div
-            className="backdrop-blur-sm border border-gray-700 rounded-[10px] p-8  transition-all duration-300 hover:scale-105 w-[380px] h-[350px]"
-            style={{
-              backgroundImage:
-                "lightgray 0% 0% / 100px 100px repeat, linear-gradient(135deg, rgba(164, 255, 255, 0.00) 0%, rgba(164, 255, 255, 0.08) 100%) ",
-              mixBlendMode: "screen",
-            }}
-          >
+          <div className="backdrop-blur-sm border bg-gradient-to-br from-black to-teal-700/40 border-gray-700 rounded-[10px] p-8  transition-all duration-300 hover:scale-105 w-[380px] h-[350px]">
             <div className="flex flex-col items-center text-center">
               <div className=" mb-6 rounded-xl flex items-center justify-center">
                 <img src={zap} className="w-[100px] h-[100px]" alt="pause" />

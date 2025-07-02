@@ -1,5 +1,6 @@
 import React from "react";
 import bgCard from "../../assets/card.svg";
+import DiagonalLine from "./angle-line";
 const FinanceHeroSection: React.FC = () => {
   return (
     <section className="bg-black text-white py-20 px-8 relative overflow-hidden">
@@ -51,34 +52,7 @@ const FinanceHeroSection: React.FC = () => {
         {/* Angled Border Design */}
         <div className="absolute top-[-40px] right-0 w-full h-full pointer-events-none">
           {/* Main angled line */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1439"
-            height="228.547"
-            viewBox="0 0 1439 232"
-            fill="none"
-            style={{ flexShrink: 0 }}
-          >
-            <path
-              d="M1439 230.3H824.312L595.774 1.75293H0"
-              stroke="url(#paint0_linear_2320_5936)"
-              strokeWidth="2.445"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_2320_5936"
-                x1="0"
-                y1="116.027"
-                x2="1439"
-                y2="116.027"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="white" stopOpacity="0" />
-                <stop offset="0.5" stopColor="white" />
-                <stop offset="1" stopColor="white" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
+          <DiagonalLine />
         </div>
       </div>
 
@@ -87,7 +61,6 @@ const FinanceHeroSection: React.FC = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "100vh",
         }}
       >
         <img
@@ -95,8 +68,6 @@ const FinanceHeroSection: React.FC = () => {
           alt="card-section"
           style={{
             width: "1210px",
-            height: "719.459px",
-            marginTop: "150px",
             flexShrink: 0,
             borderRadius: "10px",
             background:
