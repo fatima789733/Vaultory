@@ -4,7 +4,7 @@ import Button from "../money-section/button";
 
 export default function Navbar() {
   return (
-    <nav className="relative flex items-center justify-center mt-2 px-5 py-6 lg:px-12">
+    <nav className="relative flex items-center justify-center mt-10 md:mt-2 px-5 py-6 lg:px-12">
       <div
         className="hidden lg:flex items-center space-x-4 rounded-full px-6 py-2"
         style={{

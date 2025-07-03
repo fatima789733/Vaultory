@@ -3,13 +3,17 @@ import demoVideo from "../../assets/video.mp4";
 import Navbar from "../navbar";
 import { Play } from "lucide-react";
 import Button from "../money-section/button";
+import useInView from "../../hooks/useInView";
+
 export default function Hero() {
+  const { ref, isInView } = useInView(0.3);
+
   return (
-    <div className="h-screen bg-black  relative overflow-hidden">
+    <div className="h-screen bg-black relative overflow-hidden">
       {/* Background Video Layer */}
       <div className="absolute top-[30%] inset-0 z-0 pointer-events-none">
         <video
-          className="w-full h-full object-cover "
+          className="w-full h-full object-cover"
           autoPlay
           muted
           loop
@@ -29,10 +33,15 @@ export default function Hero() {
       <div className="relative z-10">
         <Navbar />
 
-        <div className="flex flex-col items-center justify-center text-center px-6 py-20 lg:py-32 mt-[-55px]">
+        <div
+          ref={ref}
+          className="flex flex-col items-center justify-center text-center px-6 h-screen py-20 lg:py-32 mt-[-55px]"
+        >
           <div className="max-w-4xl mx-auto">
             <h1
-              className="text-[61px] font-haffer font-[670] leading-[130%] text-center capitalize text-transparent bg-clip-text mb-6"
+              className={`transition-all duration-1000 ${
+                isInView ? "animate-fade-in-left" : "opacity-0 translate-x-10"
+              } text-2xl md:text-[61px] font-haffer font-[670] leading-[130%] text-center capitalize text-transparent bg-clip-text mb-6`}
               style={{
                 fontStyle: "normal",
                 background:
@@ -47,7 +56,11 @@ export default function Hero() {
             </h1>
 
             <p
-              className="text-[20px] font-haffer text-center capitalize mb-12 leading-[176%] max-w-3xl mx-auto"
+              className={`transition-all duration-1000 ${
+                isInView
+                  ? "animate-fade-in-left-delay"
+                  : "opacity-0 translate-x-10"
+              } text-[20px] font-haffer text-center capitalize mb-12 leading-[176%] max-w-3xl mx-auto`}
               style={{
                 color: "#FFF",
                 fontStyle: "normal",
@@ -60,7 +73,7 @@ export default function Hero() {
               Across Currencies — All In One Intelligent Dashboard.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 ">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <div>
                 <Button variant="primary">Try Vaultory</Button>
               </div>

@@ -14,7 +14,7 @@ const GlowingFlowPath: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
 
   return (
-    <div className="w-full h-screen bg-black flex items-center justify-center -translate-y-20">
+    <div className="w-full py-[50px] bg-black flex items-center justify-center -translate-y-20">
       <svg
         ref={svgRef}
         xmlns="http://www.w3.org/2000/svg"
