@@ -39,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({ children, variant = "primary" }) => {
         onMouseMove={handleMouseMove}
         className={`relative overflow-hidden px-6 py-3 rounded-full font-semibold flex items-center justify-center space-x-2 group min-w-[180px] text-black ${
           variant === "primary"
-            ? "bg-teal-300"
+            ? "bg-[#A4FFFF]"
             : "border border-white text-white bg-transparent"
         }`}
         style={{
