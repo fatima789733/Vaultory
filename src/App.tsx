@@ -5,7 +5,7 @@ import VaultorySection from "./components/vaultory";
 import FinanceHeroSection from "./components/finance-section";
 import TestimonialSection from "./components/Testoimonials";
 import OnboardingFlowSection from "./components/onBoarding";
-// import MoneySection from "./components/money-section";
+import MoneySection from "./components/money-section";
 import FooterSection from "./components/footer";
 import "./index.css";
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <FinanceHeroSection />
         <TestimonialSection />
         <OnboardingFlowSection />
-        {/* <MoneySection /> */}
+        <MoneySection />
         <FooterSection />
       </section>
     </div>
