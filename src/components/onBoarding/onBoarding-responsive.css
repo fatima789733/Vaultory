@@ -1,0 +1,149 @@
+/* Base styles */
+.onboarding-section {
+  background-color: black;
+  color: white;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.onboarding-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.onboarding-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.onboarding-title {
+  text-transform: capitalize;
+  text-align: center;
+  font-family: "Haffer", sans-serif;
+  transition: all 1s;
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 670;
+  line-height: 130%;
+  background: linear-gradient(
+    93deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    #fff 49.58%,
+    rgba(255, 255, 255, 0.4) 99.17%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.flow-visualization {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label-text {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-family: "Haffer", sans-serif;
+}
+
+/* Label positioning - Desktop */
+.label-1 {
+  position: absolute;
+  top: 2.5rem;
+  left: 8rem;
+}
+
+.label-2 {
+  position: absolute;
+  top: 5rem;
+  left: 450px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.label-3 {
+  position: absolute;
+  top: 4rem;
+  right: 20rem;
+  text-align: center;
+}
+
+.label-4 {
+  position: absolute;
+  top: 16rem;
+  left: 14rem;
+}
+
+.label-5 {
+  position: absolute;
+  left: 620px;
+  top: 24rem;
+  text-align: center;
+}
+
+.label-6 {
+  position: absolute;
+  right: 3rem;
+  text-align: center;
+}
+
+/* Medium screens */
+@media (min-width: 768px) {
+  .label-text {
+    font-size: 1rem;
+  }
+
+  .label-3 {
+    right: 20rem;
+  }
+
+  .label-4 {
+    left: 14rem;
+  }
+}
+
+/* iPhone 12 Pro Max and similar mobile devices */
+@media (max-width: 428px) {
+  .onboarding-section {
+    padding: 0 1rem;
+  }
+
+  .onboarding-header {
+    margin-bottom: 2rem;
+  }
+
+  .onboarding-title {
+    font-size: 24px;
+    line-height: 120%;
+    margin-bottom: 1rem;
+  }
+
+  .label-text {
+    font-size: 0.625rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 375px) {
+  .onboarding-title {
+    font-size: 20px;
+  }
+
+  .label-text {
+    font-size: 0.5rem;
+  }
+}
+
+/* Large mobile devices and small tablets */
+@media (min-width: 429px) and (max-width: 768px) {
+  .onboarding-title {
+    font-size: 28px;
+  }
+
+  .label-text {
+    font-size: 0.75rem;
+  }
+}

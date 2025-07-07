@@ -4,6 +4,7 @@ import Navbar from "../navbar";
 import { Play } from "lucide-react";
 import Button from "../money-section/button";
 import useInView from "../../hooks/useInView";
+import "../hero-section/hero-responsiveness.css"; // ✅ Responsive styles
 
 export default function Hero() {
   const { ref, isInView } = useInView(0.3);
@@ -41,7 +42,7 @@ export default function Hero() {
             <h1
               className={`transition-all duration-1000 ${
                 isInView ? "animate-fade-in-left" : "opacity-0 translate-x-10"
-              } text-2xl md:text-[61px] font-haffer font-[670] leading-[130%] text-center capitalize text-transparent bg-clip-text mb-6`}
+              } text-2xl md:text-[61px] font-haffer font-[670] leading-[130%] text-center capitalize text-transparent bg-clip-text mb-6 hero-heading`}
               style={{
                 fontStyle: "normal",
                 background:
@@ -60,7 +61,7 @@ export default function Hero() {
                 isInView
                   ? "animate-fade-in-left-delay"
                   : "opacity-0 translate-x-10"
-              } text-[20px] font-haffer text-center capitalize mb-12 leading-[176%] max-w-3xl mx-auto`}
+              } text-[20px] font-haffer text-center capitalize mb-12 leading-[176%] max-w-3xl mx-auto hero-subtext`}
               style={{
                 color: "#FFF",
                 fontStyle: "normal",
@@ -75,10 +76,12 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <div>
-                <Button variant="primary">Try Vaultory</Button>
+                <Button className="hero-button-primary" variant="primary">
+                  Try Vaultory
+                </Button>
               </div>
 
-              <button className="border-2 border-gray-400 font-haffer hover:border-teal-300 text-gray-300 hover:text-teal-300 px-6 py-2.5 rounded-full font-semibold transition-all duration-200 flex items-center space-x-2 hover:bg-teal-400/10 min-w-[180px]">
+              <button className="border-2 border-gray-400 font-haffer hover:border-teal-300 text-gray-300 hover:text-teal-300 px-6 py-2.5 rounded-full font-semibold transition-all duration-200 flex items-center space-x-2 hover:bg-teal-400/10 min-w-[180px] hero-button-secondary">
                 <Play className="w-5 h-5" />
                 <span>See how it works</span>
               </button>

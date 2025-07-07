@@ -1,0 +1,29 @@
+@media (max-width: 450px) {
+  .hero-heading {
+    font-size: 28px !important;
+    line-height: 1.4 !important;
+  }
+
+  .hero-subtext {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  .hero-button-primary {
+    font-size: 13.5px !important;
+    padding: 0.4rem 1rem !important; /* tighter Y-padding */
+    min-width: auto !important;
+  }
+
+  .hero-button-secondary {
+    font-size: 13px !important;
+    padding: 0.4rem 1rem !important;
+    min-width: auto !important;
+    margin-bottom: 10rem !important;
+  }
+
+  .hero-button-secondary svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}

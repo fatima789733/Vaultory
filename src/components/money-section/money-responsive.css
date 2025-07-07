@@ -1,0 +1,33 @@
+/* Responsive styles for iPhone 12 Pro Max and similar devices */
+@media (max-width: 428px) {
+  .money-container {
+    height: 500px;
+    margin-top: 0;
+  }
+
+  .money-heading {
+    font-size: 26px;
+  }
+
+  .money-description {
+    font-size: 16px;
+  }
+
+  .hero-button-primary {
+    font-size: 13.5px !important;
+    padding: 0.4rem 1rem !important;
+    min-width: auto !important;
+  }
+
+  .secondary-button {
+    font-size: 13px !important;
+    padding: 0.4rem 1rem !important;
+    min-width: auto !important;
+    margin-bottom: 5.5rem !important;
+  }
+
+  .secondary-button svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}

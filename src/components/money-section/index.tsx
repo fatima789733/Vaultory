@@ -4,14 +4,14 @@ import { Play } from "lucide-react";
 import coin from "../../assets/Coin.png";
 import bgCoin from "../../assets/coin-bg.png";
 import useInView from "../../hooks/useInView";
-
+import "../money-section/money-responsive.css";
 const MoneySection: React.FC = () => {
   const { ref, isInView } = useInView(0.3);
 
   return (
     <section
       ref={ref}
-      className="relative flex items-center overflow-hidden mt-10 mb-36 justify-center bg-black"
+      className="relative flex items-center overflow-hidden mt-10 mb-36 justify-center bg-black money-container"
     >
       <div
         className="relative w-[1210px] h-[719.459px] overflow-hidden rounded-[10px]"
@@ -48,7 +48,7 @@ const MoneySection: React.FC = () => {
           <div className="space-y-8 justify-items-start ml-10">
             <div className="space-y-6">
               <h1
-                className={`capitalize font-haffer leading-tight transition-all duration-1000 ${
+                className={`capitalize font-haffer leading-tight money-heading transition-all duration-1000 ${
                   isInView ? "animate-fade-in-left" : "opacity-0 translate-x-10"
                 }`}
                 style={{
@@ -70,7 +70,7 @@ const MoneySection: React.FC = () => {
               </h1>
 
               <p
-                className={`font-haffer capitalize max-w-md transition-all duration-1000 delay-200 ${
+                className={`font-haffer capitalize money-description max-w-md transition-all duration-1000 delay-200 ${
                   isInView
                     ? "animate-fade-in-left-delay"
                     : "opacity-0 translate-x-10"
@@ -92,8 +92,10 @@ const MoneySection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="primary">Start Free Trial</Button>
-              <button className="border-2 border-gray-400 font-haffer hover:border-teal-300 text-gray-300 hover:text-teal-300 px-6 py-2.5 rounded-full font-semibold transition-all duration-200 flex items-center space-x-2 hover:bg-teal-400/10 min-w-[180px]">
+              <Button variant="primary" className="hero-button-primary ">
+                Start Free Trial
+              </Button>
+              <button className="border-2 border-gray-400 secondary-button font-haffer hover:border-teal-300 text-gray-300 hover:text-teal-300 px-6 py-2.5 rounded-full font-semibold transition-all duration-200 flex items-center space-x-2 hover:bg-teal-400/10 min-w-[180px]">
                 <Play className="w-5 h-5" />
                 <span>See how it works</span>
               </button>

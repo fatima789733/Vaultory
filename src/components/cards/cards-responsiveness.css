@@ -1,0 +1,31 @@
+/* business-finance-hero-responsive.css */
+
+@media (max-width: 450px) {
+  .finance-heading {
+    font-size: 28px !important;
+    line-height: 1.4 !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .finance-card {
+    height: 300px !important;
+    padding: 1.25rem !important;
+    margin-left: 15px;
+  }
+
+  .finance-card img {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .finance-card h3 {
+    font-size: 20px !important;
+  }
+
+  .finance-card p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
+  }
+}

@@ -5,9 +5,14 @@ import type { ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   variant?: "primary" | "secondary";
+  className?: string; // ✅ New prop
 }
 
-const Button: React.FC<ButtonProps> = ({ children, variant = "primary" }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  variant = "primary",
+  className = "", // ✅ Default fallback
+}) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -41,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({ children, variant = "primary" }) => {
           variant === "primary"
             ? "bg-[#A4FFFF]"
             : "border border-white text-white bg-transparent"
-        }`}
+        } ${className}`} // ✅ Merge custom className
         style={{
           boxShadow: isHovering
             ? `${glowOffset.x / 12}px ${
